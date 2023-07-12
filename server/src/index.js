@@ -21,8 +21,6 @@ const PORT = '3001'
 app.use(express.json())
 app.use('/uploads',express.static('uploads'))
 
-const jwtkey = process.env.JWT_KEY
-
 app.listen(PORT,()=>
     console.log(chalk.magenta(`\nServer started on port :`),chalk.yellow( PORT))
 )

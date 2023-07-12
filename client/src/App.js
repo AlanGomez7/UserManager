@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
 import SignUp from './components/SignUp/SignUp';
 import PrivateComponent from './components/Private/PrivateComponent';
 import Login from './components/Login/Login';
@@ -13,7 +12,7 @@ import AdminLogin from './components/Admin/AdminLogin';
 import AdminHome from './components/Admin/AdminHome';
 import { AdminComponent } from './components/Private/AdminPrivate';
 import ViewUsers from './components/Admin/ViewUsers';
-import UpdateUser from './components/Admin/UpdateUser';
+import UpdateUser from './components/Admin/UpdateUser'; 
 
 function App() {
   return (
@@ -23,7 +22,7 @@ function App() {
         <Routes>
           <Route element={<PrivateComponent />}>
             <Route path='/' element={<Home />} />
-            <Route path='/profile/update' element={<UpdateProfile />} />
+            <Route path='/profile/update' element={<UpdateProfile />}/>
             <Route path='/logout' element={<h1>fosif</h1>} />
             <Route path='/profile' element={<Profile />} />
           </Route>
@@ -39,7 +38,6 @@ function App() {
           <Route path='/*' element={<ErrorPage/>}/>
         </Routes>
 
-        <Footer />
       </BrowserRouter>
     </div>
   )

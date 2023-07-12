@@ -1,4 +1,4 @@
-const jwtkey = process.env.JWT_KEY
+const jwtkey = 'process.env.JWT_KEY'
 const Jwt = require('jsonwebtoken')
 
 

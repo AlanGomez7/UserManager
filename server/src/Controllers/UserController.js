@@ -3,14 +3,14 @@ const chalk = require('chalk')
 const Jwt = require('jsonwebtoken')
 const User = require('../Models/UserSchema');
 const date = require('date-and-time');
-const jwtkey = process.env.JWT_KEY
+const jwtkey = 'secret'
 
 function time() {
     const now = new Date();
     console.log('\n',date.format(now, 'hh:mm:ss A'));
 }
 module.exports = {
-    userLogin(req, res){
+     userLogin(req, res){
         time()
         if (validator.isEmail(req.body.email) && req.body.password) {
             User
@@ -18,6 +18,7 @@ module.exports = {
                 .select('-password')
                 .then((user) => {
                 if (user) {
+                    console.log('\n',user)
                         Jwt.sign({ user }, jwtkey, { expiresIn: "24h" }, (err, token) => {
                             if (err) {
                                 console.log(err)

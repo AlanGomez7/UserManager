@@ -5,7 +5,6 @@ import './UpdateProfile.css'
 import { useDispatch } from "react-redux";
 import { updateUsername } from '../../redux/user';
 
-
 function Profile() {
 
     const [name, setName] = useState('')

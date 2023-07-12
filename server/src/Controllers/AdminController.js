@@ -1,7 +1,7 @@
 const chalk = require('chalk')
 const Jwt = require('jsonwebtoken')
-const jwtkey = process.env.JWT_KEY
-const adminPassword = process.env.ADMIN_PASSWORD
+const jwtkey = 'secret'
+const adminPassword = 'Alan@123'
 
 const User = require('../Models/UserSchema');
 

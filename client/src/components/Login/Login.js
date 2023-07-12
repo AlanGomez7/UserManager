@@ -23,7 +23,6 @@ function Login() {
     
 
     const handleSubmit = async ()=>{
-        console.log({email,password})
         if (!email && !password) {
             setError('please enter your email and password')
             return
@@ -35,6 +34,7 @@ function Login() {
                 'Content-Type':'application/json'
             }
         })
+        console.log(result)
         result.json().then((result)=>{
             console.log(result)
             if (result.error) {
@@ -66,8 +66,6 @@ function Login() {
                 <h3 className='error'>{error}</h3>
 
                 <button onClick={handleSubmit} className='signUp-btn' >Login</button>
-
-                
             </div>
         </div>
     )
